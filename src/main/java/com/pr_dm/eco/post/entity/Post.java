@@ -2,9 +2,11 @@ package com.pr_dm.eco.post.entity;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 
@@ -28,19 +30,7 @@ public class Post {
     @CreationTimestamp
     private LocalDateTime registerDate = LocalDateTime.now();
 
-    @LastModifiedDate
-    private LocalDateTime modifyDate;
-
-    @Enumerated(EnumType.STRING)
-    private PostCategory categoryId;
-
-
-    @Builder
-    public Post(String userId, String title, String text){
-        this.userId = userId;
-        this.title = title;
-        this.text = text;
-    }
+    //조회수는 나중에...
 
 
 }
